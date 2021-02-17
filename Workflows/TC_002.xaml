@@ -1,0 +1,239 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="TC_002" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:p="http://schemas.uipath.com/workflow/activities/word" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uma="clr-namespace:UiPath.MobileAutomation.Activities;assembly=UiPath.MobileAutomation.Activities" xmlns:umm="clr-namespace:UiPath.MobileAutomation.Models;assembly=UiPath.MobileAutomation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property sap2010:Annotation.AnnotationText="Dictionary structure to store configuration data of the process (settings, constants and assets)." Name="in_Config" Type="InArgument(scg:Dictionary(x:String, x:Object))" />
+    <x:Property Name="in_Test_Run_Folder" Type="InArgument(x:String)" />
+    <x:Property Name="in_TransactionItem" Type="InArgument(sd:DataRow)" />
+    <x:Property Name="in_Device_URL" Type="InArgument(x:String)" />
+    <x:Property Name="in_Application_URL" Type="InArgument(x:String)" />
+  </x:Members>
+  <this:TC_002.in_Config>
+    <InArgument x:TypeArguments="scg:Dictionary(x:String, x:Object)" />
+  </this:TC_002.in_Config>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1038,1591</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>TC_002_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.MobileAutomation.Models</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.MobileAutomation.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.MobileAutomation.Contracts.Target</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Word</x:String>
+      <x:String>UiPath.Word.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.MobileAutomation</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>UiPath.MobileAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Word</AssemblyReference>
+      <AssemblyReference>UiPath.Word.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap2010:Annotation.AnnotationText="-- Validate the  Card holder name in the welcome screen - Invalid Name&#xA;" DisplayName="TC_002" sap:VirtualizedContainerService.HintSize="636,1426" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Ui_Text" />
+      <Variable x:TypeArguments="sd1:Image" Name="Ui_Mobile_Screenshot" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:CreateFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="-- Create the .docx File Based on the Test Case Name from the excel" DisplayName="Create File" sap:VirtualizedContainerService.HintSize="594,174" sap2010:WorkflowViewState.IdRef="CreateFile_1" Name="[in_TransactionItem.Item(&quot;Test_ID&quot;).ToString+&quot;_&quot;+&#xA;in_TransactionItem.Item(&quot;Platform Type&quot;).ToString+&quot;_&quot;+&#xA;in_TransactionItem.Item(&quot;Device&quot;).ToString+&#xA;&quot;.docx&quot;]" Path="[in_Test_Run_Folder]">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CreateFile>
+    <p:WordApplicationScope DisplayName="Word Application Scope" FilePath="[in_Test_Run_Folder +&#xA;in_TransactionItem.Item(&quot;Test_ID&quot;).ToString+&quot;_&quot;+&#xA;in_TransactionItem.Item(&quot;Platform Type&quot;).ToString+&quot;_&quot;+&#xA;in_TransactionItem.Item(&quot;Device&quot;).ToString+&#xA;&quot;.docx&quot;]" sap:VirtualizedContainerService.HintSize="594,1078" sap2010:WorkflowViewState.IdRef="WordApplicationScope_1">
+      <p:WordApplicationScope.Body>
+        <ActivityAction x:TypeArguments="ui:WordDocument">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="ui:WordDocument" Name="WordDocumentScope" />
+          </ActivityAction.Argument>
+          <uma:MobileDeviceConnection CollectPageSource="{x:Null}" CollectScreenshot="{x:Null}" MirroringEnabled="{x:Null}" StartPage="{x:Null}" AppiumUrl="[in_Device_URL]" DisplayName="Android_Emulator_Pixel3a | App Debug" sap:VirtualizedContainerService.HintSize="560,969" sap2010:WorkflowViewState.IdRef="MobileDeviceConnection_3" LoggingEnabled="False" LoggingFolderPath="C:\Users\VISHNU~1.SHA\AppData\Local\Temp\UiPath Mobile Automation Logs" SingleInstanceForDevelopment="True" VideoRecordingEnabled="False" VideoRecordingQuality="Normal" VideoRecordingTimeLimit="600" WaitForPageUpdateDevelopment="True">
+            <uma:MobileDeviceConnection.Arguments>
+              <InArgument x:TypeArguments="x:String" x:Key="platformName">[in_TransactionItem.Item("Platform Type").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="platformVersion">[in_TransactionItem.Item("Version").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="deviceName">[in_TransactionItem.Item("Device").ToString]</InArgument>
+              <InArgument x:TypeArguments="x:String" x:Key="app">[in_Application_URL]</InArgument>
+            </uma:MobileDeviceConnection.Arguments>
+            <uma:MobileDeviceConnection.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="UiPathScopeContext" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,865" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="484,104" sap2010:WorkflowViewState.IdRef="WordAppendText_1" NewLine="False" Text="[&quot;TestCase_ID: &quot;+in_TransactionItem.Item(&quot;Test_ID&quot;).ToString+ Environment.NewLine+&#xD;&#xA;&quot;TestCase_Name: &quot;+in_TransactionItem.Item(&quot;Description&quot;).ToString+Environment.NewLine+&#xD;&#xA;&quot;Platform Type: &quot;+in_TransactionItem.Item(&quot;Platform Type&quot;).ToString+Environment.NewLine+&#xD;&#xA;&quot;Device Name: &quot;+in_TransactionItem.Item(&quot;Device&quot;).ToString+Environment.NewLine+&#xD;&#xA;&quot;Version: &quot;+in_TransactionItem.Item(&quot;Version&quot;).ToString+Environment.NewLine+&#xD;&#xA;&quot;Execution_Timestamp_Start: &quot;+System.DateTime.Now.ToString(&quot;yyyy/MM/dd_hh:mm:ss&quot;)+Environment.NewLine+&#xD;&#xA;&quot;-----------------------------------------------------------------------------------------------------------------------------------------&quot;]" />
+                  <uma:GetAttribute DelayAfter="{x:Null}" DelayBefore="{x:Null}" Timeout="{x:Null}" Attribute="[Ui_Text]" AttributeName="text" DisplayName="Get Attribute" sap:VirtualizedContainerService.HintSize="484,139" sap2010:WorkflowViewState.IdRef="GetAttribute_1" RequiresInitialization="False">
+                    <uma:GetAttribute.Target>
+                      <umm:Target Accuracy="0.8" DesignTimeRectangle="159, 230, 212, 26" FriendlyName="Get Attribute" FullSelector="&lt;mbl android:className='android.widget.TextView' id='com.example.cardcontrolfeatures:id/CardHolderName' /&gt;" FuzzyAccuracy="0.5" FuzzySelector="&lt;mbl android:className='android.widget.TextView' text='Harsh Deep ' id='com.example.cardcontrolfeatures:id/CardHolderName' accessibilityId='' check:text='Harsh Deep ' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAkcAAABKCAYAAACxQvAAAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAABDISURBVHhe7d1XkBTVF8fxC2vGLKCCYsKMCuIqBhQVc1YspFARFQxVPuiDGf0/6IMlVmlhpEoLFTGUYgazGFGkzIqYwJzFhAFF/n4vd5aemb63e1LTs/v7VE25vaz0zk4v98w5557utGDBgkVGRERERKzO7r8iIiIi8h8FRyIiIiIRCo5EREREIhQciYiIiEQoOBIRERGJUHAkIiIiEqHgSERERCRCwZGIiIhIhIIjERERkQgFRyIiIiIRCo5EREREIhQciYiIiEQoOBIRERGJUHAkIiIiEtFpwYIFi9zH0gS+/fZbM3fuXHdUrHv37mbDDTd0RyIiIlINBUdN5s033zS33367Oyq21157mX322ccdiYiISDWKgqM33njD/Pbbb+6oWK9evcz666/vjtL7/fffzWuvveaOyrW2tprlllvOHUmSZgiOQtdRqc6dO9vXf6WVVjKrr7666dq1q1l22WXdn4qIiGSvKDi66aabzAcffOCOih1++OFmp512ckfp/fDDD2bs2LHuqNwFF1xgVl55ZXckSZohOApdR0kIjLbaaivTp08fs/nmmytQEhGRzKkhW3Ll77//tpmn2267zVx11VXm9ddfN//++6/7UxERkcZTcCS5RdbxzjvvNBMnTjS//PKL+6yIiEhjKTiS3Js1a5YZP3683aknIiLSaAqOpCmQRaKX6fvvv3efERERaQwFR5KpAQMGmOOPP77tceyxx5ojjjjC7LHHHnanWsjPP/9sJk2aZP7880/3GRERkfpTcCSZWmeddcyWW27Z9th6663NjjvuaPbff39z1llnmZEjR5p1113XfXW5r776yjz22GPuSEREpP4UHEludOrUyWy22WZm1KhRZpNNNnGfLTd9+nTz2WefuSMREZH6aqo5R7/++qv59NNPzZdffml7T+bPn29LLCuuuKL9O8hK9OzZ095CY5lllnH/VxjDCn2341hvvfXsYELMmzfPzhj64osvzE8//WRWWGEFs8MOO5htt93W/nkctqAXvl8efP8MxWR2T2HoYY8ePex5uPVHGmnnHC1cuNAGEO+//7757rvvbEmKYYuck4Ge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" InformativeScreenshot="00119e1dadd648b1a94b75f905d0411d.png" Occurence="0" Text="Harsh Deep" />
+                    </uma:GetAttribute.Target>
+                  </uma:GetAttribute>
+                  <Sequence DisplayName="Take Screenshot and Resize" sap:VirtualizedContainerService.HintSize="484,66" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uma:TakeScreenshot Height="{x:Null}" Width="{x:Null}" DisplayName="Take Screenshot" sap:VirtualizedContainerService.HintSize="434,22" sap2010:WorkflowViewState.IdRef="TakeScreenshot_3" RequiresInitialization="False" Screenshot="[Ui_Mobile_Screenshot]" />
+                    <ui:SaveImage DisplayName="Save Image" FileName="[in_Config(&quot;Temp_ScreenShotFolder&quot;).ToString+&#xA;in_Config(&quot;Temp_Screenshot_ImageName&quot;).ToString]" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="SaveImage_3" Image="[Ui_Mobile_Screenshot]" />
+                    <Assign sap:VirtualizedContainerService.HintSize="434,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="sd1:Image">[Ui_Mobile_Screenshot]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="sd1:Bitmap">[New Bitmap(Ui_Mobile_Screenshot, New Size(241, 440))]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:SaveImage DisplayName="Save Image" FileName="[in_Config(&quot;Temp_ScreenShotFolder&quot;).ToString+&#xA;in_Config(&quot;Temp_Screenshot_ImageName&quot;).ToString]" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="SaveImage_4" Image="[Ui_Mobile_Screenshot]" />
+                    <p:WordAddImage DisplayName="Add Picture" sap:VirtualizedContainerService.HintSize="434,84" sap2010:WorkflowViewState.IdRef="WordAddImage_2" ImagePath="[in_Config(&quot;Temp_ScreenShotFolder&quot;).ToString+&#xA;in_Config(&quot;Temp_Screenshot_ImageName&quot;).ToString]" />
+                    <p:WordAppendText DisplayName="Append Text" sap:VirtualizedContainerService.HintSize="434,104" sap2010:WorkflowViewState.IdRef="WordAppendText_3" Text="-----------------------------------------------------------------------------------------------------------------------------------------" />
+                  </Sequence>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[Ui_Text]" />
+                  <If Condition="[Ui_Text.Trim = &quot;Vishnu Shankar&quot;]" sap:VirtualizedContainerService.HintSize="484,213" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence DisplayName="Assign FAIL" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Test Case -FAILED&quot;]" />
+                        <Throw Exception="[new BusinessRuleException(&quot;Invalid Card Name&quot;)]" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Throw_1" />
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="304,152" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[TC_TransactionStatus]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">FAIL</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="334,51" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,183" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;FAIL&quot;]" />
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                        </ui:CommentOut>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Assign PASS" sap:VirtualizedContainerService.HintSize="200,66" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Test Case -PASS&quot;]" />
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ActivityAction>
+            </uma:MobileDeviceConnection.Body>
+          </uma:MobileDeviceConnection>
+        </ActivityAction>
+      </p:WordApplicationScope.Body>
+    </p:WordApplicationScope>
+  </Sequence>
+</Activity>
